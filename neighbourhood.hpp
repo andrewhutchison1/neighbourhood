@@ -40,14 +40,6 @@ auto neighbourhood(BidIt first, BidIt last, BidIt element, Size n)
 {
 	assert((n >= 0));
 
-	#if 0
-	// If the size of the neighbourhood is greater than half of the
-	// size of the range [first, last), then just return [first, last)
-	if (n > (std::distance(first, last) / 2)) {
-		return {first, last};
-	}
-	#endif
-
 	return {
 		neighbourhood_left(first, element, n),
 		neighbourhood_right(last, element, n)
