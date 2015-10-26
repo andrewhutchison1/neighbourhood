@@ -13,6 +13,7 @@ namespace ah1 {
 // less than or equal to n. Returns an iterator to the start of the
 // neighbourhood such that the start does not exceed first.
 template <typename BidIt, typename Size>
+//	requires BidirectionalIterator<BidIt>
 auto neighbourhood_left(BidIt first, BidIt element, Size n) -> BidIt
 {
 	assert((n >= 0));
@@ -23,8 +24,9 @@ auto neighbourhood_left(BidIt first, BidIt element, Size n) -> BidIt
 // Computes the right neighbourhood of an element in a range, of size
 // less than or equal to n. Returns an iterator to one past the end of the
 // neighbourhood such that the end does not exceed last.
-template <typename FwdIt, typename Size>
-auto neighbourhood_right(FwdIt last, FwdIt element, Size n) -> FwdIt
+template <typename InIt, typename Size>
+//	requires InputIterator<InIt>
+auto neighbourhood_right(InIt last, InIt element, Size n) -> InIt
 {
 	assert((n >= 0));
 	advance_bounded(element, last, element, n + 1);
@@ -35,6 +37,7 @@ auto neighbourhood_right(FwdIt last, FwdIt element, Size n) -> FwdIt
 // n elements either side of element. Returns a pair of iterators
 // [first, last) that contains element.
 template <typename BidIt, typename Size>
+//	requires BidirectionalIterator<BidIt>
 auto neighbourhood(BidIt first, BidIt last, BidIt element, Size n)
 		-> std::pair<BidIt, BidIt>
 {
