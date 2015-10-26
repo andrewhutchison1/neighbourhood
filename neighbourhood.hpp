@@ -5,7 +5,7 @@
 
 #include <cassert>
 
-#include "advance_bounded/advance_bounded.hpp"
+#include "advance_bounded.hpp"
 
 namespace ah1 {
 
