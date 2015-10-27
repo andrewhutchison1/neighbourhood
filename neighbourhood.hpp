@@ -42,7 +42,6 @@ inline auto neighbourhood(BidIt first, BidIt last, BidIt element, Size n)
 		-> std::pair<BidIt, BidIt>
 {
 	assert((n >= 0));
-
 	return {
 		neighbourhood_left(first, element, n),
 		neighbourhood_right(last, element, n)
